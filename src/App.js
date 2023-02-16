@@ -2,7 +2,7 @@ import './App.css';
 import SignUp from './components/SignUp';
 import { AuthProvider } from './context/authContext.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import SignUp from './components/SignUp';
+import Home from './components/Home';
 import Login from './components/Login';
 
 function App() {
