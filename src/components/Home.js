@@ -12,14 +12,16 @@ const Home = () => {
   };
 
 
-  return (
+  return(
     <div>
       <h1>ホームページ</h1>
       <button onClick={handleLogout}>ログアウト</button>
     </div>
   );
 
-
 };
+
+
+
 
 export default Home;

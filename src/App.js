@@ -4,6 +4,8 @@ import { AuthProvider } from './context/authContext.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import PublicRoute from './components/PublicRoute';
 
 function App() {
   return (
@@ -11,9 +13,11 @@ function App() {
       <div style={{ margin: '2em' }}>
         <BrowserRouter>
           <Routes>
-            <Route path='/signup' element={<SignUp />} />
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login />} />
+            <Route element={<PublicRoute />}>
+              <Route path='/login' element={<Login />} />
+              <Route path='/signup' element={<SignUp />} />
+            </Route>
+            <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
           </Routes>
         </BrowserRouter>
       </div>
